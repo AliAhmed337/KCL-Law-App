@@ -1,6 +1,5 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity} from 'react-native';
-import Constants from "expo-constants";
 
 const s = StyleSheet.create({
     primaryButton: {
@@ -21,7 +20,7 @@ const s = StyleSheet.create({
 export function PrimaryButton(props) {
     return (
         <TouchableOpacity onPress={props.onPress}>
-            <Text style={s.primaryButton}>Continue</Text>
+            <Text style={s.primaryButton}>{props.children}</Text>
         </TouchableOpacity>
     );
 }
