@@ -28,7 +28,6 @@ class LogInScreen extends React.Component {
                         <PrimaryInput label={'Email'} value={this.state.email}
                                       onChangeText={(email) => this.setState({email})} />
                         <FormComponentButton onPress={this._emailAssocWithUser}>Continue</FormComponentButton>
-                        <FormComponentButton onPress={this._signInAsync}>Proceed</FormComponentButton>
                     </View>
                 }
 
@@ -38,8 +37,7 @@ class LogInScreen extends React.Component {
                                       onChangeText={(email) => this.setState({email})} />
                         <PrimaryInput label={'Password'} value={this.state.password}
                                       onChangeText={(password) => this.setState({password})} />
-                        <FormComponentButton onPress={this._emailAssocWithUser}>Continue</FormComponentButton>
-                        <FormComponentButton onPress={this._signInAsync}>Proceed</FormComponentButton>
+                        <FormComponentButton onPress={this._signInAsync}>Sign In</FormComponentButton>
                     </View>
                 }
 
@@ -53,8 +51,7 @@ class LogInScreen extends React.Component {
                                   onChangeText={(familyName) => this.setState({familyName})} />
                     <PrimaryInput label={'Password'} value={this.state.password}
                                   onChangeText={(password) => this.setState({password})} />
-                    <FormComponentButton onPress={this._emailAssocWithUser}>Continue</FormComponentButton>
-                    <FormComponentButton onPress={this._signInAsync}>Proceed</FormComponentButton>
+                    <FormComponentButton onPress={this._signInAsync}>Register</FormComponentButton>
                 </View>
                 }
 
