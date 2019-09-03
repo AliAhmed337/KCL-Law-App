@@ -45,17 +45,17 @@ class LogInScreen extends React.Component {
                 }
 
                 { this.props.isRegisteredUser == false &&
-                <View>
-                    <PrimaryInput label={'Email'} value={this.state.email}
-                                  onChangeText={(email) => this.setState({email})} />
-                    <PrimaryInput label={'Forename'} value={this.state.givenName}
-                                  onChangeText={(givenName) => this.setState({givenName})} />
-                    <PrimaryInput label={'Surname'} value={this.state.familyName}
-                                  onChangeText={(familyName) => this.setState({familyName})} />
-                    <PrimaryInput label={'Password'} value={this.state.password}
-                                  onChangeText={(password) => this.setState({password})} />
-                    <FormComponentButton onPress={this._signInAsync}>Register</FormComponentButton>
-                </View>
+                    <View>
+                        <PrimaryInput label={'Email'} value={this.state.email}
+                                      onChangeText={(email) => this.setState({email})} />
+                        <PrimaryInput label={'Forename'} value={this.state.givenName}
+                                      onChangeText={(givenName) => this.setState({givenName})} />
+                        <PrimaryInput label={'Surname'} value={this.state.familyName}
+                                      onChangeText={(familyName) => this.setState({familyName})} />
+                        <PrimaryInput label={'Password'} value={this.state.password}
+                                      onChangeText={(password) => this.setState({password})} />
+                        <FormComponentButton onPress={this._signInAsync}>Register</FormComponentButton>
+                    </View>
                 }
 
             </ScrollView>
