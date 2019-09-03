@@ -5,6 +5,10 @@ import {LetsGetStarted} from '../custom_components/registration_screen/LetsGetSt
 import {FormComponentButton} from '../custom_components/registration_screen/FormComponentButton'
 import Constants from 'expo-constants';
 
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { determine_email_assoc_with_account } from '../actions/authActions';
+
 const s = require('../stylesheet.js');
 
 class LogInScreen extends React.Component {
@@ -12,18 +16,17 @@ class LogInScreen extends React.Component {
 
   constructor(props) {
       super(props);
-      this.state = {email: "", password: "", givenName: "", familyName: "", isRegisteredUser: null};
+      this.state = {email: "", password: "", givenName: "", familyName: ""};
   }
 
   render() {
-    console.log(this.state);
     return (
         <KeyboardAvoidingView style={s.screenContainer} behavior="padding" >
             <View style={s.statusBar} />
             <ScrollView style={s.signInContainer} >
                 <LetsGetStarted />
 
-                { this.state.isRegisteredUser == null &&
+                { this.props.isRegisteredUser == null &&
                     <View>
                         <PrimaryInput label={'Email'} value={this.state.email}
                                       onChangeText={(email) => this.setState({email})} />
@@ -31,7 +34,7 @@ class LogInScreen extends React.Component {
                     </View>
                 }
 
-                { this.state.isRegisteredUser == true &&
+                { this.props.isRegisteredUser == true &&
                     <View>
                         <PrimaryInput label={'Email'} value={this.state.email}
                                       onChangeText={(email) => this.setState({email})} />
@@ -41,7 +44,7 @@ class LogInScreen extends React.Component {
                     </View>
                 }
 
-                { this.state.isRegisteredUser == false &&
+                { this.props.isRegisteredUser == false &&
                 <View>
                     <PrimaryInput label={'Email'} value={this.state.email}
                                   onChangeText={(email) => this.setState({email})} />
@@ -61,7 +64,7 @@ class LogInScreen extends React.Component {
   }
 
   _emailAssocWithUser = () => {
-      this.state.isRegisteredUser = (this.state.email == "dom");
+      this.props.determine_email_assoc_with_account({'email': this.state.email});
       this.forceUpdate();
   };
 
@@ -72,4 +75,12 @@ class LogInScreen extends React.Component {
 
 }
 
-export default LogInScreen;
+const mapStateToProps = state => ({
+    isRegisteredUser: state.auth.isRegisteredUser
+});
+
+LogInScreen.propTypes = {
+    determine_email_assoc_with_account: PropTypes.func.isRequired
+};
+
+export default connect(mapStateToProps, { determine_email_assoc_with_account })(LogInScreen);
