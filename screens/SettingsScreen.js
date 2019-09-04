@@ -1,14 +1,24 @@
 import React from 'react';
-import { ExpoConfigView } from '@expo/samples';
+import {View, Text, AsyncStorage} from 'react-native';
+import {FormComponentButton} from "../custom_components/registration_screen/FormComponentButton";
 
-export default function SettingsScreen() {
-  /**
-   * Go ahead and delete ExpoConfigView and replace it with your content;
-   * we just wanted to give you a quick view of your config.
-   */
-  return <ExpoConfigView />;
+class SettingsScreen extends React.Component {
+  static navigationOptions = { title: 'Settings'};
+
+  render() {
+    return (
+        <View>
+            <Text>Settings page</Text>
+            <FormComponentButton onPress={this._signOutAsync}>Sign Out</FormComponentButton>
+        </View>
+    );
+  }
+
+    _signOutAsync = async () => {
+        await AsyncStorage.clear();
+        this.props.navigation.navigate('Auth');
+    };
+
 }
 
-SettingsScreen.navigationOptions = {
-  title: 'app.json',
-};
+export default SettingsScreen;
