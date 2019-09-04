@@ -1,6 +1,22 @@
 import React from 'react';
 import {StyleSheet, Text, TextInput, TouchableOpacity, View} from 'react-native';
-const s = require('../stylesheet.js');
+
+const s = StyleSheet.create({
+    formComponent: {
+        marginTop: 30
+    },
+    formComponentHeader: {
+        fontSize: 15,
+        fontWeight: 500,
+        marginBottom: 5
+    },
+    formComponentInput: {
+        height: 30,
+        borderColor: '#757575',
+        borderWidth: 0,
+        borderBottomWidth: 2
+    },
+});
 
 export function PrimaryInput(props) {
     return (
