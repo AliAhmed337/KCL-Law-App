@@ -1,7 +1,12 @@
 import React from 'react';
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {PrimaryButton} from "../PrimaryButton";
-const s = require('../../stylesheet.js');
+
+const s = StyleSheet.create({
+    formComponent: {
+        marginTop: 30
+    }
+});
 
 export function FormComponentButton(props) {
     return (

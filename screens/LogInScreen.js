@@ -3,13 +3,24 @@ import {View, ScrollView, KeyboardAvoidingView, AsyncStorage, StyleSheet} from '
 import {PrimaryInput} from '../custom_components/PrimaryInput'
 import {LetsGetStarted} from '../custom_components/registration_screen/LetsGetStarted.js'
 import {FormComponentButton} from '../custom_components/registration_screen/FormComponentButton'
-import Constants from 'expo-constants';
+import { StatusBar } from '../custom_components/StatusBar'
 
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { determine_email_assoc_with_account } from '../actions/authActions';
 
-const s = require('../stylesheet.js');
+const s = StyleSheet.create({
+    screenContainer: {
+        flex: 1,
+        flexDirection: 'row',
+        backgroundColor: "#fff",
+        alignItems: 'center',
+    },
+    signInContainer: {
+        flex: 0,
+        padding: 20
+    }
+});
 
 class LogInScreen extends React.Component {
   static navigationOptions = {header: null};
@@ -22,7 +33,7 @@ class LogInScreen extends React.Component {
   render() {
     return (
         <KeyboardAvoidingView style={s.screenContainer} behavior="padding" >
-            <View style={s.statusBar} />
+            <StatusBar/>
             <ScrollView style={s.signInContainer} >
                 <LetsGetStarted />
 
