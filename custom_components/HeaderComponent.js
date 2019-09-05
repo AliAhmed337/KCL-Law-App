@@ -10,11 +10,11 @@ const s = StyleSheet.create({
     },
     letsGetStarted: {
         fontSize: 32,
-        fontWeight: 600
+        fontWeight: '600'
     },
     welcomeText: {
         fontSize: 17,
-        fontWeight: 500
+        fontWeight: '500'
     }
 });
 

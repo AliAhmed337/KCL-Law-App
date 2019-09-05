@@ -7,7 +7,7 @@ const s = StyleSheet.create({
     },
     formComponentHeader: {
         fontSize: 15,
-        fontWeight: 500,
+        fontWeight: '500',
         marginBottom: 5
     },
     formComponentInput: {
