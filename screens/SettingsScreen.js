@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, AsyncStorage} from 'react-native';
+import {View, Text, AsyncStorage, ScrollView, FlatList} from 'react-native';
 import {FormComponentButton} from "../custom_components/registration_screen/FormComponentButton";
 import {StatusBar} from "../custom_components/StatusBar";
 import {HeaderComponent} from "../custom_components/HeaderComponent";
@@ -9,12 +9,12 @@ class SettingsScreen extends React.Component {
 
   render() {
     return (
-        <View style={{flex:1, backgroundColor: '#fbfbfb'}}>
+        <View style={{flex:1}}>
             <StatusBar/>
-            <View style={{paddingTop: 20, paddingBottom: 20, paddingLeft: 15, paddingRight: 15}}>
+            <ScrollView style={{backgroundColor: '#F5F5F5', paddingTop: 20, paddingBottom: 20, paddingLeft: 15, paddingRight: 15}}>
                 <HeaderComponent pageName={'About'} />
                 <FormComponentButton onPress={this._signOutAsync}>Sign Out</FormComponentButton>
-            </View>
+            </ScrollView>
         </View>
     );
   }

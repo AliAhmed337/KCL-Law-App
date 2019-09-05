@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Button, Text, AsyncStorage} from 'react-native';
+import {View, Button, Text, AsyncStorage, ScrollView} from 'react-native';
 import {StatusBar} from "../custom_components/StatusBar";
 import {HeaderComponent} from "../custom_components/HeaderComponent";
 
@@ -8,14 +8,14 @@ class FirmsScreen extends React.Component {
 
     render() {
         return (
-            <View style={{flex:1, backgroundColor: '#fbfbfb'}}>
+            <View style={{flex:1}}>
                 <StatusBar/>
-                <View style={{backgroundColor: '#fbfbfb', paddingTop: 20, paddingBottom: 20, paddingLeft: 15, paddingRight: 15}}>
-                    <HeaderComponent pageName={'Law Firms'} />
-                </View>
+                <ScrollView style={{backgroundColor: '#F5F5F5', paddingTop: 20, paddingBottom: 20, paddingLeft: 15, paddingRight: 15}}>
+                    <HeaderComponent pageName={'About'} />
+                </ScrollView>
             </View>
-    );
-  }
+        );
+    }
 
 }
 
