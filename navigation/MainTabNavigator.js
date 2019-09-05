@@ -17,14 +17,15 @@ const NewsFeedStackNavigator = createStackNavigator({
 NewsFeedStackNavigator.navigationOptions = {
   header: null,
   tabBarOptions:  {
-        activeTintColor: '#e91e63',
+        activeTintColor: 'red',
+        inactiveTintColor: 'green', //CHANGE ALL INACTIVE COLOURS TO SAME COLOUR PLS
         showIcon: true
   },
   tabBarIcon: ({ tintColor })  => (
     <MaterialCommunityIcons
                 name="newspaper"
                 size={25}
-                color="#900"
+                color={tintColor}
             />
  )
 };
@@ -36,14 +37,15 @@ const EventsStackNavigator = createStackNavigator({
 EventsStackNavigator.navigationOptions = {
   header: null,
   tabBarOptions:  {
-        activeTintColor: '#e91e63',
+        activeTintColor: 'orange',
+        inactiveTintColor: 'green', //CHANGE ALL INACTIVE COLOURS TO SAME COLOUR PLS
         showIcon: true
   },
   tabBarIcon: ({ tintColor })  => (
     <MaterialIcons
                 name="event"
                 size={25}
-                color="#900"
+                color={tintColor}
             /> )
 };
 
@@ -54,14 +56,15 @@ const FirmsStackNavigator = createStackNavigator({
 FirmsStackNavigator.navigationOptions = {
   header: null,
   tabBarOptions:  {
-        activeTintColor: '#e91e63',
+        activeTintColor: 'pink',
+        inactiveTintColor: 'green', //CHANGE ALL INACTIVE COLOURS TO SAME COLOUR PLS
         showIcon: true
   },
   tabBarIcon: ({ tintColor })  => (
     <MaterialIcons
                 name="gavel"
                 size={25}
-                color="#900"
+                color={tintColor}
             /> )
 };
 
@@ -72,14 +75,15 @@ const SettingsStackNavigator = createStackNavigator({
 SettingsStackNavigator.navigationOptions = {
   header: null,
   tabBarOptions:  {
-        activeTintColor: '#e91e63',
+        activeTintColor: 'blue', 
+        inactiveTintColor: 'green', //CHANGE ALL INACTIVE COLOURS TO SAME COLOUR PLS
         showIcon: true
   },
   tabBarIcon: ({ tintColor })  => (
     <MaterialIcons
                 name="settings"
                 size={25}
-                color="#900"
+                color={tintColor}
             /> )
 };
 
