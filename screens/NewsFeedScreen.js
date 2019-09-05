@@ -3,14 +3,16 @@ import {View, Text, FlatList, ScrollView} from 'react-native';
 import {NewsCard} from "../custom_components/feed_components/NewsCard";
 import {HeaderComponent} from "../custom_components/HeaderComponent";
 import {StatusBar} from "../custom_components/StatusBar";
+import {TabBarIcon} from "../components/TabBarIcon";
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 import {fetch_news_posts} from "../actions/newsActions";
 
 class NewsFeedScreen extends React.Component {
-  static navigationOptions = {header: null};
-
+  static navigationOptions = {header: null}; //This might not actually do anything
+                                            //navigation options may not work inside screens
     constructor(props) {
         super(props);
     }
