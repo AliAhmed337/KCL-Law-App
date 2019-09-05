@@ -20,7 +20,7 @@ const s = StyleSheet.create({
 
 export function HeaderComponent(props) {
     return (
-        <View style={{flexDirection:'row'}}>
+        <View style={{flexDirection:'row', marginBottom:15}}>
             <View style={{flex:0, width:80}}>
                 <Image style={s.welcomeShield} source={require("../assets/images/shield.png")}/>
             </View>
